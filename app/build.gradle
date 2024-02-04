@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.mbh.moviebrowser"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -25,6 +25,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        create("mock") {
+            resValue("string", "app_name", "MovieBrowserMock")
+            applicationIdSuffix = ".mock"
+            debuggable = true
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -80,12 +88,23 @@ dependencies {
     implementation coroutines.coroutines
 
     // DI
-    implementation di.dagger
+    implementation di.hilt
 
     // Utils
     implementation utils.gson
 
+    // Lottie
+    implementation ui.lottie
+
+
+    // Test
+    testImplementation testing.junit
+    testImplementation testing.mockito
+    testImplementation testing.coroutinesTest
+    testImplementation testing.truth
+    testImplementation testing.mockk
+
     // Kapt
-    kapt annotation.dagger
+    kapt annotation.hilt
     kapt annotation.room
 }

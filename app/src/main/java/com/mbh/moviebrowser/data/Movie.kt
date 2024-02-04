@@ -1,11 +1,11 @@
-package com.mbh.moviebrowser.domain
+package com.mbh.moviebrowser.data
 
 data class Movie(
     val id: Long,
     val title: String,
-    val genres: String,
+    val genres: List<String>,
     val overview: String?,
     val coverUrl: String?,
     val rating: Float,
-    val isFavorite: Boolean,
+    var isFavorite: Boolean,
 )

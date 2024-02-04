@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MovieBrowser</string>
+
+    <!--Error handling-->
+    <string name="network_error_title">Network error</string>
+    <string name="unknown_error_title">Unknown error</string>
+
+    <string name="unauthenticated_error_message">Invalid username or password.</string>
+    <string name="internal_server_error_message">Internal server error.</string>
+    <string name="unknown_network_error_message">Unknown network error.</string>
+
+    <string name="unknown_error_message">Unexpected error.</string>
+    <string name="unknown_host_error_message">Connection broken. Verify that you are connected to the internet.</string>
+    <string name="ok" translatable="false">OK</string>
 </resources>

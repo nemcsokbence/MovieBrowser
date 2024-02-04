@@ -22,18 +22,28 @@ ext {
             "coroutines"           : "1.6.4",
 
             // DI
-            "dagger"               : "2.44",
+            "hilt"               : "2.44",
 
             // JetPack
             "navigation"           : "2.5.3",
             "datastore"            : "1.0.0",
-            "room"                 : "2.4.3",
+            "room"                 : "2.6.0",
 
             // Util
             "coil"                 : "2.4.0",
 
             // Gson
             "gson"                 : "2.10",
+
+            // Lottie animations
+            "lottie"               : "6.3.0",
+
+            // Test
+            "junit"                : "4.13.2",
+            "mockito"              : "4.0.0",
+            "coroutinesTest"      : "1.7.1",
+            "truth"                : "1.4.0",
+            "mockk"                : "1.13.9"
     ]
 
     core = [
@@ -53,6 +63,7 @@ ext {
             "material"   : "androidx.compose.material3:material3",
             "coil"       : "io.coil-kt:coil:${versions.coil}",
             "coilCompose": "io.coil-kt:coil-compose:${versions.coil}",
+            "lottie"     : "com.airbnb.android:lottie-compose:${versions.lottie}"
     ]
 
     navigation = [
@@ -74,15 +85,23 @@ ext {
     ]
 
     di = [
-            "dagger": "com.google.dagger:hilt-android:${versions.dagger}"
+            "hilt": "com.google.dagger:hilt-android:${versions.hilt}"
     ]
 
     utils = [
             "gson": "com.google.code.gson:gson:${versions.gson}",
     ]
 
+    testing = [
+            "junit": "junit:junit:${versions.junit}",
+            "mockito": "org.mockito.kotlin:mockito-kotlin:${versions.mockito}",
+            "coroutinesTest": "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutinesTest}",
+            "truth": "com.google.truth:truth:${versions.truth}",
+            "mockk": "io.mockk:mockk-android:${versions.mockk}"
+    ]
+
     annotation = [
-            "dagger": "com.google.dagger:dagger-compiler:${versions.dagger}",
-            "room"  : "com.google.dagger:hilt-compiler:${versions.room}"
+            "hilt": "com.google.dagger:hilt-compiler:${versions.hilt}",
+            "room"  : "androidx.room:room-compiler:${versions.room}"
     ]
 }
